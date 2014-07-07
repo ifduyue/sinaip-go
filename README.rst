@@ -4,10 +4,10 @@ SinaIP Go
 sinaip-go is a ip location querying tool. It provides both cmdline querying 
 interface and HTTP API.
 
-The location data come from `SINA's IP API <http://int.dpool.sina.com.cn/iplookup/iplookup.php>`.
+The location data come from `SINA's IP API <http://int.dpool.sina.com.cn/iplookup/iplookup.php>`_.
 The whole data of `SINA's IP API` was dupmed to a binary file named ``ip.dat``
-and you can download it from `here <https://github.com/ifduyue/sinaip-generator/releases>`.
-Or, If you prefer, I've put binary generating scripts at `ifduyue/sinaip-generator <https://github.com/ifduyue/sinaip-generator>`,
+and you can download it from `here <https://github.com/ifduyue/sinaip-generator/releases>`_.
+Or, If you prefer, I've put binary generating scripts at `ifduyue/sinaip-generator <https://github.com/ifduyue/sinaip-generator>`_,
 you can do the crawling and generating things yourself.
 
 Install
