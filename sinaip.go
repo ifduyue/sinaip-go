@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	sinaiplib "github.com/ifduyue/sinaip.go/lib"
+	sinaiplib "github.com/ifduyue/sinaip-go/lib"
 	"log"
 	"net/http"
 )
