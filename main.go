@@ -32,6 +32,12 @@ func main() {
 	ipdatpath := flag.String("ipdat", os.Getenv("SINAIPDAT"), "Path to ip.dat")
 	flag.Parse()
 
+	args := flag.Args()
+	if len(args) == 0 {
+		flag.Usage()
+		os.Exit(1)
+	}
+
 	runtime.GOMAXPROCS(*cpus)
 	if *ipdatpath != "" {
 		os.Setenv("SINAIPDAT", *ipdatpath)
@@ -39,12 +45,6 @@ func main() {
 
 	if os.Getenv("SINAIPDAT") == "" {
 		log.Fatal("Path to ip.dat can't be empty")
-	}
-
-	args := flag.Args()
-	if len(args) == 0 {
-		flag.Usage()
-		os.Exit(1)
 	}
 
 	if cmd, ok := commands[args[0]]; !ok {
