@@ -3,10 +3,8 @@ package main
 import (
 	"errors"
 	"flag"
-	sinaiplib "github.com/ifduyue/sinaip-go/lib"
 	"log"
 	"net/http"
-	"os"
 )
 
 func httpdCmd() command {
@@ -35,16 +33,10 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	w.Header().Set("Content-type", "application/json; charset=utf-8")
-	w.Write(ip.Json())
+	w.Write(ip.JSON())
 }
 
 func httpd(opts *httpdOpts) error {
-	var err error
-	sinaip, err = sinaiplib.NewSINAIP(os.Getenv("SINAIPDAT"))
-	if err != nil {
-		return err
-	}
-
 	httpaddr := opts.addrs[0]
 	log.Printf("%10v", sinaip.Size)
 	log.Printf("%10v", sinaip.IndexOffset)

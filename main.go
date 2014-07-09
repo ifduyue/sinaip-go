@@ -1,16 +1,19 @@
 package main
 
 import (
+	sinaiplib "./lib"
 	"flag"
 	"fmt"
-	sinaiplib "github.com/ifduyue/sinaip-go/lib"
 	"log"
 	"os"
 	"runtime"
 )
 
 var (
-	sinaip *sinaiplib.SINAIP
+	sinaip    *sinaiplib.SINAIP
+	cpus      *int
+	ipdatpath *string
+	preload   *bool
 )
 
 func main() {
@@ -25,11 +28,13 @@ func main() {
 		fmt.Printf("\nglobal flags:\n")
 		fmt.Printf("\t-cpus=%d Number of CPUs to use\n", runtime.NumCPU())
 		fmt.Printf("\t-ipdat=\"\" Path to ip.dat, will try to get it from env variable \"SINAIPDAT\" if left empty.\n")
+		fmt.Printf("\t-preload If true, preload ip.dat into memory, otherwise mmap is used.")
 		fmt.Println(examples)
 	}
 
-	cpus := flag.Int("cpus", runtime.NumCPU(), "Number of CPUs to use")
-	ipdatpath := flag.String("ipdat", os.Getenv("SINAIPDAT"), "Path to ip.dat")
+	cpus = flag.Int("cpus", runtime.NumCPU(), "Number of CPUs to use")
+	ipdatpath = flag.String("ipdat", os.Getenv("SINAIPDAT"), "Path to ip.dat")
+	preload = flag.Bool("preload", false, "Preload ip.dat to memory, otherwise mmap is used.")
 	flag.Parse()
 
 	args := flag.Args()
@@ -39,12 +44,14 @@ func main() {
 	}
 
 	runtime.GOMAXPROCS(*cpus)
-	if *ipdatpath != "" {
-		os.Setenv("SINAIPDAT", *ipdatpath)
+	if *ipdatpath == "" {
+		log.Fatal("Path to ip.dat can't be empty")
 	}
 
-	if os.Getenv("SINAIPDAT") == "" {
-		log.Fatal("Path to ip.dat can't be empty")
+	if sinaiptmp, err := sinaiplib.NewSINAIP(*ipdatpath, *preload); err != nil {
+		log.Fatal(err)
+	} else {
+		sinaip = sinaiptmp
 	}
 
 	if cmd, ok := commands[args[0]]; !ok {
