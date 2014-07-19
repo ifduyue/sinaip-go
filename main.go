@@ -28,7 +28,7 @@ func main() {
 		fmt.Printf("\nglobal flags:\n")
 		fmt.Printf("\t-cpus=%d Number of CPUs to use\n", runtime.NumCPU())
 		fmt.Printf("\t-ipdat=\"\" Path to ip.dat, will try to get it from env variable \"SINAIPDAT\" if left empty.\n")
-		fmt.Printf("\t-preload If true, preload ip.dat into memory, otherwise mmap is used.")
+		fmt.Printf("\t-preload If true, preload ip.dat into memory, otherwise mmap is used.\n")
 		fmt.Println(examples)
 	}
 

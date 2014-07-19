@@ -37,6 +37,7 @@ Usage
     global flags:
         -cpus=8 Number of CPUs to use
         -ipdat="" Path to ip.dat, will try to get it from env variable "SINAIPDAT" if left empty.
+        -preload If true, preload ip.dat into memory, otherwise mmap is used.
 
     examples:
       sinaip-go query 1.2.3.4
@@ -53,6 +54,12 @@ of CPUs available in the system.
 
 Specifies the path of generated binary file. It defaults to a empty string,
 and then the value of ENV variable ``SINAIPDAT``.
+
+-preload
+~~~~~~~~~~
+
+Whethe to load whole ``ip.dat`` into memory, or just mmap it and let OS manage
+the memory things.
 
 
 Copyright and License
