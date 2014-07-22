@@ -67,4 +67,4 @@ Copyright and License
 
 Copyright (c) 2014 Yue Du - https://github.com/ifduyue
 
-Licensed under AGPLv3, see LICENSE.
+Licensed under AGPLv3.
