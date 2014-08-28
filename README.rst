@@ -58,8 +58,8 @@ and then the value of ENV variable ``SINAIPDAT``.
 -preload
 ~~~~~~~~~~
 
-Whethe to load whole ``ip.dat`` into memory, or just mmap it and let OS manage
-the memory things.
+Whether to load whole ``ip.dat`` into memory, or just mmap it and let OS
+manage the memory things.
 
 
 Copyright and License
