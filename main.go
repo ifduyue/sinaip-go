@@ -26,9 +26,9 @@ func main() {
 			cmd.fs.PrintDefaults()
 		}
 		fmt.Printf("\nglobal flags:\n")
-		fmt.Printf("\t-cpus=%d Number of CPUs to use\n", runtime.NumCPU())
-		fmt.Printf("\t-ipdat=\"\" Path to ip.dat, will try to get it from env variable \"SINAIPDAT\" if left empty.\n")
-		fmt.Printf("\t-preload If true, preload ip.dat into memory, otherwise mmap is used.\n")
+		fmt.Printf("    -cpus=%d Number of CPUs to use\n", runtime.NumCPU())
+		fmt.Printf("    -ipdat=\"\" Path to ip.dat, will try to get it from env variable \"SINAIPDAT\" if left empty.\n")
+		fmt.Printf("    -preload If true, preload ip.dat into memory, otherwise mmap is used.\n")
 		fmt.Println(examples)
 	}
 
@@ -63,8 +63,8 @@ func main() {
 
 const examples = `
 examples:
-	sinaip-go query 1.2.3.4
-	sinaip-go httpd 127.0.0.1:8080
+    sinaip-go query 1.2.3.4
+    sinaip-go httpd 127.0.0.1:8080
 `
 
 type command struct {
