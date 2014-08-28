@@ -1,9 +1,9 @@
 package main
 
 import (
-	sinaiplib "github.com/ifduyue/sinaip-go/lib"
 	"flag"
 	"fmt"
+	sinaiplib "github.com/ifduyue/sinaip-go/lib"
 	"log"
 	"os"
 	"runtime"
