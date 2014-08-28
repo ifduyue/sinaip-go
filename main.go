@@ -63,8 +63,8 @@ func main() {
 
 const examples = `
 examples:
-	sinaip-go query 1.2.3.4
-	sinaip-go httpd 127.0.0.1:8080
+\tsinaip-go query 1.2.3.4
+\tsinaip-go httpd 127.0.0.1:8080
 `
 
 type command struct {
