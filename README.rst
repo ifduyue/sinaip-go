@@ -52,7 +52,7 @@ of CPUs available in the system.
 -ipdat
 ~~~~~~~
 
-Specifies the path of generated binary file. It defaults to a empty string,
+Specifies the path of generated binary file. It defaults to an empty string,
 and then the value of ENV variable ``SINAIPDAT``.
 
 -preload
