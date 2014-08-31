@@ -27,12 +27,12 @@ Usage
 
 ::
 
-    sinaip-go -h
+    $ sinaip-go -h
     Usage: sinaip-go [globals] <command> [options]
 
-    httpd command: [options] <addr>
-
     query command: [options] <ip>...
+
+    httpd command: [options] <addr>
 
     global flags:
         -cpus=8 Number of CPUs to use
@@ -40,8 +40,8 @@ Usage
         -preload If true, preload ip.dat into memory, otherwise mmap is used.
 
     examples:
-      sinaip-go query 1.2.3.4
-      sinaip-go httpd 127.0.0.1:8080
+        sinaip-go query 1.2.3.4
+        sinaip-go httpd 127.0.0.1:8080
 
 -cpus
 ~~~~~~
